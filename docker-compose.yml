@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  avc:
+    image: vinanrra/auto-voice-channels
+    #build: .                 # If you wan't to build locally
+    hostname: auto-voice-channels
+    restart: unless-stopped
+    environment:
+      - ADMIN_ID=
+      - CLIENT_ID=
+      - TZ=UTC                 # Timezone: Europe/London
+      - TOKEN=
+      #- RDY_MESSAGE=false     # Optional: Disable ready message
+      #- DISABLE_LOOP=false    # Optional: Disable creation loop
+      #- HEARTBEAT_TIMEOUT=60  # Optional
+      #- AWS=false             # Optional
+    volumes:
+      - ./.docker/guilds:/AutoVoiceChannels/guilds:Z

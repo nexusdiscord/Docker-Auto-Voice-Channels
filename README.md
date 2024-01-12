@@ -11,7 +11,9 @@ This pulls the latest zip file of the bot from github.
 ***Please make sure you first [read the documentation](https://github.com/gregzaal/Auto-Voice-Channels#readme) of Auto-Voice-Channels.**
 
 ## Usage
+
 ### Docker
+
 ```bash
 docker run -d \
   --name avc \
@@ -27,28 +29,11 @@ docker run -d \
   -v /path/to/folder:/AutoVoiceChannels/guilds:Z \
   vinanrra/auto-voice-channels
 ```
-### docker-compose
-```
-version: '2'
-services:
-  avc:
-    image: vinanrra/auto-voice-channels
-    container_name: AutoVoiceChannels
-    environment:
-      - ADMIN_ID=<ADMIN ID>
-      - CLIENT_ID=<CLIENT_ID>
-      - TZ=<TIMEZONE>
-      - TOKEN=<TOKEN>
-      - HEARTBEAT_TIMEOUT=60 #Optional
-      - DISABLE_LOOP=false #Optional
-      - RDY_MESSAGE=false #Optional
-      - AWS=false #Optional
-    volumes:
-      - /path/to/folder:/AutoVoiceChannels/guilds:Z
-    restart: unless-stopped
-```
+
+If you wan't a Docker Compose file see: [docker-compose.yml](docker-compose.yml)
 
 ## Parameters
+
 | Parameter | Function |
 | :----: | --- |
 | `ADMIN_ID` | Your ID, for the bot to DM you when it logs on, joins servers, gets errors, etc. |
