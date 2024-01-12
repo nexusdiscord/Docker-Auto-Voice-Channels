@@ -11,6 +11,7 @@ RUN apt-get update && \
     unzip /tmp/avc.zip -d /tmp && \
     mv /tmp/Auto-Voice-Channels-master /AutoVoiceChannels && \
     pip install -r /AutoVoiceChannels/requirements.txt && \
+    python -m pip install --upgrade urllib3==2.1.0 requests==2.31.0 discord.py[voice]==1.7.0 && \
     apt-get -y remove curl unzip build-essential && \
     apt clean && \
     rm -rf \
